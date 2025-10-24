@@ -1,0 +1,65 @@
+[
+  {
+    "id": "capsule-1",
+    "title": "Web Development Basics",
+    "subject": "Web",
+    "level": "Beginner",
+    "flashcards": [
+      { "term": "HTML", "definition": "Markup language for web pages." },
+      { "term": "CSS", "definition": "Styles web pages." }
+    ],
+    "quiz": [
+      {
+        "question": "Which tag is used for headings in HTML?",
+        "options": ["<head>", "<h1>", "<p>", "<div>"],
+        "answer": "<h1>"
+      }
+    ],
+    "flashcardStats": { "known": 0, "unknown": 2 },
+    "quizProgress": 0,
+    "lastScorePercent": 0,
+    "updatedAt": "2025-10-20T00:00:00.000Z"
+  },
+  {
+    "id": "capsule-2",
+    "title": "Mathematics Basics",
+    "subject": "Math",
+    "level": "Intermediate",
+    "flashcards": [
+      { "term": "Derivative", "definition": "Rate of change of a function." },
+      { "term": "Integral", "definition": "Area under a curve." }
+    ],
+    "quiz": [
+      {
+        "question": "What is the derivative of x^2?",
+        "options": ["2x", "x", "x^2", "1"],
+        "answer": "2x"
+      }
+    ],
+    "flashcardStats": { "known": 0, "unknown": 2 },
+    "quizProgress": 0,
+    "lastScorePercent": 0,
+    "updatedAt": "2025-10-20T00:00:00.000Z"
+  },
+  {
+    "id": "capsule-3",
+    "title": "Mobile App Basics",
+    "subject": "Mobile App Development",
+    "level": "Beginner",
+    "flashcards": [
+      { "term": "Flutter", "definition": "UI toolkit for building apps." },
+      { "term": "Widget", "definition": "Basic building block of Flutter UI." }
+    ],
+    "quiz": [
+      {
+        "question": "Which language does Flutter use?",
+        "options": ["Dart", "Java", "Kotlin", "Swift"],
+        "answer": "Dart"
+      }
+    ],
+    "flashcardStats": { "known": 0, "unknown": 2 },
+    "quizProgress": 0,
+    "lastScorePercent": 0,
+    "updatedAt": "2025-10-20T00:00:00.000Z"
+  }
+]

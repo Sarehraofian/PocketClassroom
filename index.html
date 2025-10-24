@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pocket Classroom</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/all.min.css" />
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">🎓 Pocket Classroom</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" href="#" id="nav-library">Library</a></li>
+          <li class="nav-item"><a class="nav-link" href="#" id="nav-author">Author</a></li>
+          <li class="nav-item"><a class="nav-link" href="#" id="nav-learn">Learn</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container mt-4">
+    <!-- Library Section -->
+    <section id="section-library">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <div>
+          <h4>Your Capsules</h4>
+          <p>Create new classes and explore topics you want to learn.</p>
+        </div>
+        <div>
+          <button id="new-capsule-btn" class="btn btn-outline-success me-2 ">➕ New Capsule</button>
+          <button id="import-capsule-btn" class="btn btn-outline-info ms-2">📥 Import JSON</button>
+        </div>
+      </div>
+      <div id="library-content"></div>
+    </section>
+
+    <!-- Author Section -->
+    <section id="section-author" class="d-none">
+      
+      <div id="author-content"></div>
+    </section>
+
+    <!-- Learn Section -->
+    <section id="section-learn" class="d-none">
+      <div class="learn-header d-flex justify-content-between align-items-center mb-3 p-3 bg-dark text-white rounded">
+        <div>
+          <h4>Learn</h4>
+          <p>Use notes, flashcards, and quizzes to study your capsules effectively.</p>
+        </div>
+        <div>
+          <select id="learn-capsule-select" class="form-select d-inline w-auto me-2"></select>
+          <button id="export-capsule-btn" class="btn btn-outline-info">Export</button>
+        </div>
+      </div>
+      <div id="learn-content"></div>
+    </section>
+  </main>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

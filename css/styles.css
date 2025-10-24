@@ -1,0 +1,363 @@
+body {
+  background-color: #121212;
+  color: #e0e0e0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.navbar, .author-header, .learn-header {
+  border-radius: 8px;
+}
+
+.card, .flashcard, .dynamic-list-item {
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+}
+.card-title,
+.capsule-subject {
+  font-style: italic;
+  font-weight: 500;
+  color: #adb5bd; 
+  letter-spacing: 0.3px;
+
+}
+
+/* Equal height cards */
+.capsule-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.capsule-card .card-body {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+/* Responsive grid */
+@media (max-width: 992px) {
+  .capsule-col {
+    flex: 0 0 48%;
+    max-width: 48%;
+  }
+}
+@media (max-width: 576px) {
+  .capsule-col {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+/* Group for buttons */
+.capsule-card .btn-group-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.4rem;
+  margin-top: 0.8rem;
+}
+
+.capsule-card .btn-group-wrap .btn {
+  flex: 1 1 23%; /* laptop: 4 buttons per row */
+  min-width: 100px;
+  text-align: center;
+}
+.btn-group-wrap .btn {
+  font-size: 0.85rem;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-group-wrap .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 2px 6px rgba(0, 255, 255, 0.3);
+}
+
+/* Tablet view: 2 buttons per row */
+@media (max-width: 991px) {
+  .capsule-card .btn-group-wrap .btn {
+    flex: 1 1 48%;
+  }
+}
+
+/* Mobile view: 1 button per row */
+@media (max-width: 767px) {
+  .capsule-card .btn-group-wrap .btn {
+    flex: 1 1 100%;
+  }
+}
+
+.capsule-card .card-body > *:not(.btn-group-wrap) {
+  margin-bottom: 0.4rem;
+}
+
+.capsule-card .progress {
+  height: 8px;
+  border-radius: 5px;
+}
+
+.flashcard-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.flashcard {
+  width: 250px;
+  height: 140px;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.flashcard-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.flashcard-inner.flipped {
+  transform: rotateY(180deg);
+}
+
+.flashcard-front, .flashcard-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border: 1px solid #444;
+  border-radius: 10px;
+  background: #2c2c2c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.5);
+}
+
+.flashcard-back {
+  transform: rotateY(180deg);
+  background: #3a3a3a;
+  
+}
+#flashcards button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 120px;   
+  white-space: nowrap;
+  font-weight: 500;
+  
+}
+
+/* Hover effects */
+#fc-known:hover {
+  background-color: #1b742f !important;  /* سبز پررنگ */
+  color: #fff !important;
+  
+}
+
+#fc-unknown:hover {
+  background-color: #750d18 !important;  /* قرمز پررنگ */
+  color: #fff !important;
+  
+}
+
+#fc-back:hover {
+  background-color: #0d6efd !important;  /* آبی روشن‌تر */
+  color: #fff !important;
+  
+}
+
+#fc-next:hover {
+  background-color: #198754 !important;  /* سبز خاص بوت‌استرپ */
+  color: #fff !important;
+  
+}
+.dynamic-list-item {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.dynamic-list-item input, select, textarea {
+  background-color: #2c2c2c;
+  border: 1px solid #555;
+  color: #e0e0e0;
+}
+
+
+
+
+
+.section-header {
+  cursor: pointer;
+}
+/* --- Buttons alignment in cards --- */
+.card .btn {
+  margin-right: 4px;
+}
+
+.card .btn:last-child {
+  margin-right: 0;
+}
+
+/* --- Retry alert message --- */
+.alert {
+  background-color: #2c2c2c !important;
+  color: #00ff8c !important;
+  border: 1px solid #333;
+  font-weight: 600;
+}
+
+
+.card .subject {
+  color: #cfcfcf;
+}
+
+/* tighten button spacing in card footer */
+.card .card-body .d-flex.gap-2 > .btn,
+.card .card-body .d-flex.gap-2 .btn {
+  margin: 0;
+  padding: 0.35rem 0.6rem;
+  font-size: 0.85rem;
+}
+
+/* small adjustments for action buttons row and retry btn */
+.card .retry-btn {
+  padding: 0.28rem 0.6rem;
+  border-color: #555;
+  color: #ddd;
+}
+
+/* --- Flip card (consistent & working) --- */
+.flip-card {
+  perspective: 1000px;
+  position: relative;
+  width: 420px;
+  height: 120px;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+  cursor: pointer;
+  margin: 0 auto;
+  border-radius: 8px;
+  overflow: visible;
+}
+.flip-card .front,
+.flip-card .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 12px;
+}
+.flip-card .front {
+  background-color: #2c2c2c;
+  color: #fff;
+}
+.flip-card .back {
+  background-color: #2c2c2c;
+   color: white;
+  transform: rotateY(180deg);
+}
+.flip-card.flipped {
+  transform: rotateY(180deg);
+}
+
+/* tabs */
+.learn-tabs .btn {
+  background: #161616;
+  color: #ddd;
+  border-color: #333;
+   transition: all 0.2s;
+
+}
+.learn-tabs .btn.active {
+  background: #0d6efd;
+  color: #fff;
+}
+
+/* notes list readability */
+.notes-list p {
+  color: #e6e6e6;
+}
+
+/* toast / alert style */
+.alert {
+  background-color: #2c2c2c !important;
+  color: #b7f6c9 !important;
+  border: 1px solid #333 !important;
+  font-weight: 600;
+}
+
+
+/* هنگام هاور روی تب‌ها */
+.learn-tabs .btn:hover:not(.active) {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+
+/* small responsive tweak */
+@media (max-width: 576px) {
+  .flip-card { width: 100%; height: 110px; }
+}
+
+
+/* Container کارت‌ها */
+#library-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* هر کارت */
+.class-card {
+  flex: 0 0 33.33%; /* لپ‌تاپ: 3 کارت در ردیف */
+  box-sizing: border-box;
+  margin-bottom: 1rem;
+}
+
+
+/* دکمه‌ها */
+.class-card .btn-group-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: flex-start;
+}
+.class-card .delete-btn {
+  margin-left: auto; /* Delete همیشه سمت راست */
+}
+
+/* تبلت: هر ردیف 2 کارت */
+@media (max-width: 992px) {
+  .class-card { flex: 0 0 50%; }
+  .class-card .btn-group-wrap { flex-direction: column; align-items: stretch; }
+  .class-card .delete-btn { align-self: flex-end; }
+}
+
+/* موبایل: هر ردیف 1 کارت */
+@media (max-width: 576px) {
+  .class-card { flex: 0 0 100%; }
+  .class-card .btn-group-wrap { flex-direction: column; align-items: stretch; }
+  .class-card .delete-btn { align-self: flex-end; }
+}
+html, body {
+  overflow-x: hidden;
+}
+.capsule-card, .author-form, .card {
+  box-sizing: border-box;
+  width: 100%;
+}
+.flashcard-single-area, .quiz-single-area {
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
+}
